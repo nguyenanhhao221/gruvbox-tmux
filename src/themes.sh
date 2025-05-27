@@ -40,7 +40,7 @@ case $SELECTED_THEME in
     ["white"]="#3c3836"
     ["yellow"]="#b57614"
 
-    ["bblack"]="#9d8374"
+    ["bblack"]="#b8b49a"
     ["bblue"]="#458588"
     ["bcyan"]="#689d69"
     ["bgreen"]="#98971a"
@@ -50,6 +50,7 @@ case $SELECTED_THEME in
     ["byellow"]="#d79921"
   )
   ;;
+
 *)
 
   # Default to medium theme
