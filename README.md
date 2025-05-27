@@ -6,3 +6,11 @@ I updated the colors to match the gruvbox colorscheme used in neovim and ghostty
 set -g @plugin "adibhanna/gruvbox-tmux"
 set -g @gruvbox-theme dark # dark or light
 ```
+
+## Dark
+
+![dark](img/dark.png)
+
+## Light
+
+![light](img/light.png)
