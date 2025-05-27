@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-SHOW_NETSPEED=$(tmux show-option -gv @gruvbox-tmux_show_git)
-if [ "$SHOW_NETSPEED" == "0" ]; then
-  exit 0
-fi
-
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$CURRENT_DIR/../lib/coreutils-compat.sh"
 source "$CURRENT_DIR/themes.sh"
