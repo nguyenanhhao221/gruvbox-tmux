@@ -52,27 +52,27 @@ case $SELECTED_THEME in
   ;;
 
 *)
-  # Default to medium theme
+  # Default to hard theme
   declare -A THEME=(
-    ["background"]="#282828"
-    ["foreground"]="#d4be98"
-    ["black"]="#3c3836"
-    ["blue"]="#7daea3"
-    ["cyan"]="#89b482"
-    ["green"]="#a9b665"
-    ["magenta"]="#d3869b"
-    ["red"]="#ea6962"
-    ["white"]="#d4be98"
-    ["yellow"]="#e78a4e"
+    ["background"]="#1d2021"
+    ["foreground"]="#ebdbb2"
+    ["black"]="#1d2021"
+    ["blue"]="#458588"
+    ["cyan"]="#689d6a"
+    ["green"]="#98971a"
+    ["magenta"]="#b16286"
+    ["red"]="#cc241d"
+    ["white"]="#a89984"
+    ["yellow"]="#d79921"
 
-    ["bblack"]="#3c3836"
-    ["bblue"]="#7daea3"
-    ["bcyan"]="#89b482"
-    ["bgreen"]="#a9b665"
+    ["bblack"]="#928374"
+    ["bblue"]="#83a598"
+    ["bcyan"]="#8ec07c"
+    ["bgreen"]="#b8bb26"
     ["bmagenta"]="#d3869b"
-    ["bred"]="#ea6962"
-    ["bwhite"]="#a89984"
-    ["byellow"]="#e78a4e"
+    ["bred"]="#fb4934"
+    ["bwhite"]="#ebdbb2"
+    ["byellow"]="#fabd2f"
   )
   ;;
 esac
