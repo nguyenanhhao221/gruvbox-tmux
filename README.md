@@ -1,4 +1,4 @@
-this is a simpified fork of https://github.com/janoamaral/tokyo-night-tmux all creadit goes to the author ❤️.
+this is a simpified fork of https://github.com/janoamaral/tokyo-night-tmux all credit goes to the author ❤️.
 
 I updated the colors to match the gruvbox colorscheme used in neovim and ghostty terminal.
 
