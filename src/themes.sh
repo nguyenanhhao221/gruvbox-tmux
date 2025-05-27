@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SELECTED_THEME="$(tmux show-option -gv @gruvbox-theme)"
+SELECTED_THEME="$(tmux show-option -gv @gruvbox-tmux_theme)"
 
 case $SELECTED_THEME in
 "dark")
