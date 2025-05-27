@@ -54,9 +54,9 @@ case $SELECTED_THEME in
 *)
   # Default to medium theme
   declare -A THEME=(
-    ["background"]="#282828"
+    ["background"]="#1d2021"
     ["foreground"]="#d4be98"
-    ["black"]="#3c3836"
+    ["black"]="#32302f"
     ["blue"]="#7daea3"
     ["cyan"]="#89b482"
     ["green"]="#a9b665"
@@ -65,7 +65,7 @@ case $SELECTED_THEME in
     ["white"]="#d4be98"
     ["yellow"]="#e78a4e"
 
-    ["bblack"]="#3c3836"
+    ["bblack"]="#32302f"
     ["bblue"]="#7daea3"
     ["bcyan"]="#89b482"
     ["bgreen"]="#a9b665"
