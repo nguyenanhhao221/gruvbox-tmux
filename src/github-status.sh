@@ -89,8 +89,8 @@ else
 fi
 
 # Format output with GitHub-themed colors and icons
-PR_ICON="󱓎"
-ISSUE_ICON="󱓎"
+PR_ICON="󰘬"
+ISSUE_ICON="󰌶"
 GITHUB_STATUS=""
 
 if [[ $PR_COUNT -gt 0 ]]; then
