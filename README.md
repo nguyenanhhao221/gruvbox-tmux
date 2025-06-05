@@ -14,8 +14,8 @@ set -g @gruvbox-tmux_github_status on # on or off
 
 - **Git Status**: Shows current branch, sync status, and change counts
 - **GitHub Integration**: Displays open pull requests and issues count for the current repository
-  - 🔀 Pull requests (magenta)
-  - ⚠️ Issues (red)
+  -  Pull requests (magenta)
+  -  Issues (red)
   - Requires GitHub CLI (`gh`) for authenticated requests or falls back to unauthenticated API calls
   - Results are cached for 5 minutes to improve performance
   - Can be disabled with `set -g @gruvbox-tmux_github_status off`

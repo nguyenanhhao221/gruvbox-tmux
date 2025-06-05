@@ -89,14 +89,16 @@ else
 fi
 
 # Format output with GitHub-themed colors and icons
+PR_ICON=""
+ISSUE_ICON=""
 GITHUB_STATUS=""
 
 if [[ $PR_COUNT -gt 0 ]]; then
-    GITHUB_STATUS="${GITHUB_STATUS}${RESET}#[fg=${THEME[ghmagenta]},bg=${THEME[background]},bold] ${PR_COUNT} "
+    GITHUB_STATUS="${GITHUB_STATUS}${RESET}#[fg=${THEME[ghmagenta]},bg=${THEME[background]},bold]${PR_ICON} ${PR_COUNT} "
 fi
 
 if [[ $ISSUE_COUNT -gt 0 ]]; then
-    GITHUB_STATUS="${GITHUB_STATUS}${RESET}#[fg=${THEME[ghred]},bg=${THEME[background]},bold] ${ISSUE_COUNT} "
+    GITHUB_STATUS="${GITHUB_STATUS}${RESET}#[fg=${THEME[ghred]},bg=${THEME[background]},bold]${ISSUE_ICON} ${ISSUE_COUNT} "
 fi
 
 # Only output if we have something to show
