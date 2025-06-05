@@ -26,15 +26,23 @@ TMUX_VARS="$(tmux show -g)"
 default_window_id_style="digital"
 default_pane_id_style="hsquare"
 default_zoom_id_style="dsquare"
+default_github_status="on"
 
 window_id_style="$(echo "$TMUX_VARS" | grep '@gruvbox-tmux_window_id_style' | cut -d" " -f2)"
 pane_id_style="$(echo "$TMUX_VARS" | grep '@gruvbox-tmux_pane_id_style' | cut -d" " -f2)"
 zoom_id_style="$(echo "$TMUX_VARS" | grep '@gruvbox-tmux_zoom_id_style' | cut -d" " -f2)"
+github_status_enabled="$(echo "$TMUX_VARS" | grep '@gruvbox-tmux_github_status' | cut -d" " -f2)"
 window_id_style="${window_id_style:-$default_window_id_style}"
 pane_id_style="${pane_id_style:-$default_pane_id_style}"
 zoom_id_style="${zoom_id_style:-$default_zoom_id_style}"
+github_status_enabled="${github_status_enabled:-$default_github_status}"
 
 git_status="#($SCRIPTS_PATH/git-status.sh #{pane_current_path})"
+if [[ "$github_status_enabled" == "on" ]]; then
+    github_status="#($SCRIPTS_PATH/github-status.sh #{pane_current_path})"
+else
+    github_status=""
+fi
 window_number="#($SCRIPTS_PATH/custom-number.sh #I $window_id_style)"
 custom_pane="#($SCRIPTS_PATH/custom-number.sh #P $pane_id_style)"
 zoom_number="#($SCRIPTS_PATH/custom-number.sh #P $zoom_id_style)"
@@ -51,5 +59,5 @@ tmux set -g window-status-current-format "$RESET#[fg=${THEME[green]},bg=${THEME[
 tmux set -g window-status-format "$RESET#[fg=${THEME[foreground]}] #{?#{==:#{pane_current_command},ssh},󰣀,}${RESET} $window_number #W#[nobold,dim]#{?window_zoomed_flag, $zoom_number, $custom_pane} #[fg=${THEME[yellow]}]#{?window_last_flag,󰁯 , } "
 
 #+--- Bars RIGHT ---+
-tmux set -g status-right "$current_path$git_status"
+tmux set -g status-right "$current_path$git_status$github_status"
 tmux set -g window-status-separator ""
