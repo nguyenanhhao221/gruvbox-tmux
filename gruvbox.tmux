@@ -5,14 +5,14 @@ SCRIPTS_PATH="$CURRENT_DIR/src"
 
 source $SCRIPTS_PATH/themes.sh
 
-tmux set -g status-left-length 80
+tmux set -g status-left-length 100
 tmux set -g status-right-length 150
 
 RESET="#[fg=${THEME[foreground]},bg=${THEME[background]},nobold,noitalics,nounderscore,nodim]"
 # Highlight colors
-tmux set -g mode-style "fg=${THEME[bgreen]},bg=${THEME[bblack]}"
+tmux set -g mode-style "fg=${THEME[green]},bg=${THEME[bblack]}"
 
-tmux set -g message-style "bg=${THEME[blue]},fg=${THEME[background]}"
+tmux set -g message-style "bg=${THEME[yellow]},fg=${THEME[background]}"
 tmux set -g message-command-style "fg=${THEME[white]},bg=${THEME[black]}"
 
 tmux set -g pane-border-style "fg=${THEME[bblack]}"
@@ -23,21 +23,29 @@ tmux set -g status-style bg="${THEME[background]}"
 
 TMUX_VARS="$(tmux show -g)"
 
-default_window_id_style="digital"
+default_window_id_style="none"
 default_pane_id_style="hsquare"
 default_zoom_id_style="dsquare"
-default_github_status="on"
+default_git_status="off"
+default_github_status="off"
 
 window_id_style="$(echo "$TMUX_VARS" | grep '@gruvbox-tmux_window_id_style' | cut -d" " -f2)"
 pane_id_style="$(echo "$TMUX_VARS" | grep '@gruvbox-tmux_pane_id_style' | cut -d" " -f2)"
 zoom_id_style="$(echo "$TMUX_VARS" | grep '@gruvbox-tmux_zoom_id_style' | cut -d" " -f2)"
+git_status_enabled="$(echo "$TMUX_VARS" | grep '@gruvbox-tmux_git_status' | cut -d" " -f2)"
 github_status_enabled="$(echo "$TMUX_VARS" | grep '@gruvbox-tmux_github_status' | cut -d" " -f2)"
 window_id_style="${window_id_style:-$default_window_id_style}"
 pane_id_style="${pane_id_style:-$default_pane_id_style}"
 zoom_id_style="${zoom_id_style:-$default_zoom_id_style}"
 github_status_enabled="${github_status_enabled:-$default_github_status}"
+git_status_enabled="${git_status_enabled:-$default_git_status}"
 
-git_status="#($SCRIPTS_PATH/git-status.sh #{pane_current_path})"
+if [[ "$git_status_enabled" == "on" ]]; then
+    git_status="#($SCRIPTS_PATH/git-status.sh #{pane_current_path})"
+else
+    git_status=""
+fi
+
 if [[ "$github_status_enabled" == "on" ]]; then
     github_status="#($SCRIPTS_PATH/github-status.sh #{pane_current_path})"
 else
@@ -50,7 +58,7 @@ current_path="#($SCRIPTS_PATH/path-widget.sh #{pane_current_path})"
 
 #+--- Bars LEFT ---+
 # Session name
-tmux set -g status-left "#[fg=${THEME[bblack]},bg=${THEME[blue]},bold] #{?client_prefix,󰠠 ,#[dim]󰤂 }#[bold,nodim]#S "
+tmux set -g status-left "#[fg=${THEME[bblack]},bg=${THEME[neutral_green]},bold] #{?client_prefix,󰠠 ,#[dim]󰤂 }#[bold,nodim]#S "
 
 #+--- Windows ---+
 # Focus

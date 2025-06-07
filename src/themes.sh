@@ -10,11 +10,12 @@ case $SELECTED_THEME in
     ["black"]="#32302f"
     ["blue"]="#7daea3"
     ["cyan"]="#89b482"
-    ["green"]="#a9b665"
+    ["green"]="#b8bb26"
     ["magenta"]="#d3869b"
     ["red"]="#ea6962"
     ["white"]="#d4be98"
-    ["yellow"]="#e78a4e"
+    ["yellow"]="#fabd2f"
+    ["neutral_green"]="#98971a"
 
     ["bblack"]="#32302f"
     ["bblue"]="#7daea3"
@@ -39,6 +40,7 @@ case $SELECTED_THEME in
     ["red"]="#9d0006"
     ["white"]="#3c3836"
     ["yellow"]="#b57614"
+    ["neutral_green"]="#98971a"
 
     ["bblack"]="#b8b49a"
     ["bblue"]="#458588"
@@ -65,6 +67,7 @@ case $SELECTED_THEME in
     ["red"]="#ea6962"
     ["white"]="#d4be98"
     ["yellow"]="#e78a4e"
+    ["neutral_green"]="#98971a"
 
     ["bblack"]="#32302f"
     ["bblue"]="#7daea3"
