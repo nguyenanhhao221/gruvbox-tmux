@@ -1,13 +1,30 @@
-this is a simpified fork of https://github.com/janoamaral/tokyo-night-tmux all credit goes to the author ❤️.
+A personalized gruvbox-inspired tmux status line, based on a fork of https://github.com/adibhanna/gruvbox-tmux and customized with my own configuration.
 
-I updated the colors to match the gruvbox colorscheme used in neovim and ghostty terminal.
+## Requirements
 
-```
-set -g @plugin "adibhanna/gruvbox-tmux"
-set -g @gruvbox-theme dark # dark or light
+This theme has the following hard requirements:
+
+- Any patched Nerd Fonts (v3 or higher)
+- Bash 4.2 or newer
+
+### Important for MacOS users
+
+- As of the time of writing, latest version of MacOS's Bash is 3.4, which cannot be used with this theme.
+- You need to install Bash 4.2 or newer.
+
+## Options
+
+Add these options into your `.tmux.conf` file:
+
+```zsh
+set -g @plugin "nguyenanhhao221/gruvbox-tmux"
+set -g @gruvbox-tmux_theme dark # dark | light
+set -g @gruvbox-tmux_git_status off # disable git status in tmux in favor of nvim status bar
+set -g @gruvbox-tmux_show_path 1 # show current path 
+set -g @gruvbox-tmux_path_format relative # full | relative, format to show path
 
 # Optional: Configure GitHub status display (default: on)
-set -g @gruvbox-tmux_github_status on # on or off
+set -g @gruvbox-tmux_github_status off # on or off
 ```
 
 ## Features
