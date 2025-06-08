@@ -10,7 +10,7 @@ tmux set -g status-right-length 150
 
 RESET="#[fg=${THEME[foreground]},bg=${THEME[background]},nobold,noitalics,nounderscore,nodim]"
 # Highlight colors
-tmux set -g mode-style "fg=${THEME[green]},bg=${THEME[bblack]}"
+tmux set -g mode-style "fg=${THEME[bblack]},bg=${THEME[yellow]}"
 
 tmux set -g message-style "bg=${THEME[yellow]},fg=${THEME[background]}"
 tmux set -g message-command-style "fg=${THEME[white]},bg=${THEME[black]}"
