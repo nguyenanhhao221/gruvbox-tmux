@@ -5,8 +5,7 @@ SELECTED_THEME="$(tmux show-option -gv @gruvbox-tmux_theme)"
 case $SELECTED_THEME in
 "dark")
   declare -A THEME=(
-    # ["background"]="#1d2021"
-    ["background"]="#09090B"
+    ["background"]="#1d2021"
     ["foreground"]="#d4be98"
     ["black"]="#32302f"
     ["blue"]="#7daea3"
