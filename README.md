@@ -19,6 +19,8 @@ Add these options into your `.tmux.conf` file:
 ```zsh
 set -g @plugin "nguyenanhhao221/gruvbox-tmux"
 set -g @gruvbox-tmux_theme dark # dark | light
+set -g @gruvbox-tmux_background_override "#000000" # optional: override the theme's background color
+set -g @gruvbox-tmux_foreground_override "#ffffff" # optional: override the theme's foreground color
 set -g @gruvbox-tmux_git_status off # disable git status in tmux in favor of nvim status bar
 set -g @gruvbox-tmux_show_path 1 # show current path 
 set -g @gruvbox-tmux_path_format relative # full | relative, format to show path

@@ -86,4 +86,10 @@ THEME['ghmagenta']="#d3869b"
 THEME['ghred']="#ea6962"
 THEME['ghyellow']="#e78a4e"
 
+BACKGROUND_OVERRIDE="$(tmux show-option -gv @gruvbox-tmux_background_override)"
+FOREGROUND_OVERRIDE="$(tmux show-option -gv @gruvbox-tmux_foreground_override)"
+
+[[ -n "$BACKGROUND_OVERRIDE" ]] && THEME["background"]="$BACKGROUND_OVERRIDE"
+[[ -n "$FOREGROUND_OVERRIDE" ]] && THEME["foreground"]="$FOREGROUND_OVERRIDE"
+
 RESET="#[fg=${THEME[foreground]},bg=${THEME[background]},nobold,noitalics,nounderscore,nodim]"
